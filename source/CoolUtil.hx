@@ -46,4 +46,8 @@ class CoolUtil
 		}
 		return dumbArray;
 	}
+	public static function showPopUp(message:String, title:String):Void
+	{
+		FlxG.stage.window.alert(message, title);
+	}
 }
