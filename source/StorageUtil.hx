@@ -16,7 +16,7 @@ import android.callback.CallBack;
 
 using StringTools;
 
-class SUtil
+class StorageUtil
 {
 	#if sys
 	public static function getStorageDirectory():String
