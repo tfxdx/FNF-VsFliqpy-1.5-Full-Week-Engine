@@ -185,8 +185,7 @@ class CopyState extends MusicBeatState
 		return file;
 	}
 
-	public static function checkExistingFiles():Bool
-	{
+	public static function checkExistingFiles():Bool {
 		locatedFiles = OpenFLAssets.list();
 
 		var assets = locatedFiles.filter(folder -> folder.startsWith('assets/'));
