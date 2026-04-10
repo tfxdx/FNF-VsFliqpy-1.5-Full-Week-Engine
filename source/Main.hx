@@ -84,12 +84,8 @@ class Main extends Sprite
 		}
 		#end
 
-		#if cpp
-		initialState = Caching;
 		game = new FlxGame(gameWidth, gameHeight, #if mobile CopyState.checkExistingFiles() ? initialState : CopyState #else initialState #end, zoom, framerate, framerate, skipSplash, startFullscreen);
-		#else
-		game = new FlxGame(gameWidth, gameHeight, #if mobile CopyState.checkExistingFiles() ? initialState : CopyState #else initialState #end, zoom, framerate, framerate, skipSplash, startFullscreen);
-		#end
+
 		addChild(game);
 
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
