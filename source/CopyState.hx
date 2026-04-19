@@ -22,7 +22,7 @@ using StringTools;
 
 class CopyState extends MusicBeatState
 {
-	private static final textFilesExtensions:Array<String> = ['ini', 'txt', 'xml', 'hxs', 'hx', 'lua', 'json', 'frag', 'vert', 'webm'];
+	private static final textFilesExtensions:Array<String> = ['ini', 'txt', 'xml', 'lua', 'json', 'webm'];
 	public static final IGNORE_FOLDER_FILE_NAME:String = "ignore.txt";
 	private static var directoriesToIgnore:Array<String> = [];
 	public static var locatedFiles:Array<String> = [];
