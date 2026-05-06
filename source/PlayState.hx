@@ -789,6 +789,9 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+
+		addHitbox();
+
 		if (FlxG.save.data.songPosition)
 		{
 			songPosBG.cameras = [camHUD];
@@ -2863,18 +2866,18 @@ class PlayState extends MusicBeatState
 		private function keyShit():Void // I've invested in emma stocks
 			{
 				// control arrays, order L D R U
-				var holdArray:Array<Bool> = [controls.LEFT, controls.DOWN, controls.UP, controls.RIGHT];
+				var holdArray:Array<Bool> = [controls.LEFT #if mobile || hitbox.buttonLeft.pressed #end, controls.DOWN #if mobile || hitbox.buttonDown.pressed #end, controls.UP #if mobile || hitbox.buttonUp.pressed #end, controls.RIGHT  #if mobile || hitbox.buttonRight.pressed #end];
 				var pressArray:Array<Bool> = [
-					controls.LEFT_P,
-					controls.DOWN_P,
-					controls.UP_P,
-					controls.RIGHT_P
+					controls.LEFT_P #if mobile || hitbox.buttonLeft.justPressed #end,
+					controls.DOWN_P #if mobile || hitbox.buttonDown.justPressed #end,
+					controls.UP_P #if mobile || hitbox.buttonUp.justPressed #end,
+					controls.RIGHT_P #if mobile || hitbox.buttonRight.justPressed #end
 				];
 				var releaseArray:Array<Bool> = [
-					controls.LEFT_R,
-					controls.DOWN_R,
-					controls.UP_R,
-					controls.RIGHT_R
+					controls.LEFT_R #if mobile || hitbox.buttonLeft.justReleased #end,
+					controls.DOWN_R #if mobile || hitbox.buttonDown.justReleased #end,
+					controls.UP_R #if mobile || hitbox.buttonUp.justReleased #end,
+					controls.RIGHT_R #if mobile || hitbox.buttonRight.justReleased #end
 				];
 				#if windows
 				if (luaModchart != null){
